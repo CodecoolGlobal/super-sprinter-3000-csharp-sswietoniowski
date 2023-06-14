@@ -8,5 +8,5 @@ public interface IUserStoriesRepository
     public UserStory? GetById(int id);
     public void Add(UserStory userStory);
     public void Update(UserStory userStory);
-    public bool Exists(int id);
+    public bool ExistsById(int id);
 }

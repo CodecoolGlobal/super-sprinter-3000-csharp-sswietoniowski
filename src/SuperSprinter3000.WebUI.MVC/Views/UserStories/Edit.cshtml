@@ -1,35 +1,49 @@
-﻿@model SuperSprinter3000.WebUI.MVC.Models.EditUserStoryViewModel
+﻿@using SuperSprinter3000.WebUI.MVC.DataAccess.Entities
+@model EditUserStoryViewModel
 
 @{
     ViewData["Title"] = "Edit User Story";
 }
 
-<div class="card">
-    <form method="post">
-        <label asp-for="Title"></label>
-        <input asp-for="Title" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-
-        <label asp-for="Description"></label>
-        <input asp-for="Description" />
-        <span asp-validation-for="Description" class="text-danger"></span>
-
-        <label asp-for="AcceptanceCriteria"></label>
-        <input asp-for="AcceptanceCriteria" />
-        <span asp-validation-for="AcceptanceCriteria" class="text-danger"></span>
-
-        <label asp-for="BusinessValue"></label>
-        <input asp-for="BusinessValue" />
-        <span asp-validation-for="BusinessValue" class="text-danger"></span>
-
-        <label asp-for="Estimation"></label>
-        <input asp-for="Estimation" />
-        <span asp-validation-for="Estimation" class="text-danger"></span>
-
-        <button type="submit">Save</button>
-        <a asp-action="Index" class="button">Cancel</a>
-        <span asp-validation-summary="All" class="text-danger"></span>
-    </form>
+<div class="row">
+    <div class="col-md-8">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger">There are errors:</div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control"/>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcceptanceCriteria" class="control-label"></label>
+                <textarea asp-for="AcceptanceCriteria" class="form-control"></textarea>
+                <span asp-validation-for="AcceptanceCriteria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessValue" class="control-label"></label>
+                <input asp-for="BusinessValue" class="form-control"/>
+                <span asp-validation-for="BusinessValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estimation" class="control-label"></label>
+                <input asp-for="Estimation" class="form-control"/>
+                <span asp-validation-for="Estimation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<Status>()" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 using SuperSprinter3000.WebUI.MVC.Attributes;
 
 namespace SuperSprinter3000.WebUI.MVC.Models;
@@ -30,5 +31,6 @@ public class AddUserStoryViewModel
     [Required]
     [Range(0.5, 40)]
     [DivisibleBy(0.5)]
+    [ModelBinder(BinderType = typeof(DecimalModelBinder))]
     public decimal Estimation { get; set; }
 }

@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.validation-summary-valid {
+    display: none
+}
+
+.form-group {
+    margin-bottom: 20px; /* Adjust this to suit your needs */
+}

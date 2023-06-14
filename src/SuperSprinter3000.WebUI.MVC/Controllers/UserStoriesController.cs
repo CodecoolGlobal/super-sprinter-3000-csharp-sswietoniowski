@@ -33,6 +33,8 @@ public class UserStoriesController : Controller
     [HttpPost]
     public IActionResult Add(AddUserStoryViewModel userStoryViewModel)
     {
+        // in post methods we're using post-redirect-get pattern to prevent double form submission
+
         if (!ModelState.IsValid)
         {
             return View(userStoryViewModel);
@@ -45,21 +47,12 @@ public class UserStoriesController : Controller
 
     public IActionResult Edit(int id)
     {
-        var userStoryViewModel = _userStoriesService.GetById(id);
+        var editUserStoryViewModel = _userStoriesService.GetByIdForEdit(id);
 
-        if (userStoryViewModel is null)
+        if (editUserStoryViewModel is null)
         {
             return NotFound();
         }
-
-        var editUserStoryViewModel = new EditUserStoryViewModel
-        {
-            Title = userStoryViewModel.Title,
-            Description = userStoryViewModel.Description,
-            AcceptanceCriteria = userStoryViewModel.AcceptanceCriteria,
-            BusinessValue = userStoryViewModel.BusinessValue,
-            Estimation = userStoryViewModel.Estimation
-        };
 
         return View(editUserStoryViewModel);
     }
@@ -67,14 +60,14 @@ public class UserStoriesController : Controller
     [HttpPost]
     public IActionResult Edit(int id, EditUserStoryViewModel editUserStoryViewModel)
     {
+        // in post methods we're using post-redirect-get pattern to prevent double form submission
+
         if (!ModelState.IsValid)
         {
             return View(editUserStoryViewModel);
         }
 
-        var userStoryViewModel = _userStoriesService.GetById(id);
-
-        if (userStoryViewModel is null)
+        if (!_userStoriesService.ExistsById(id))
         {
             return NotFound();
         }

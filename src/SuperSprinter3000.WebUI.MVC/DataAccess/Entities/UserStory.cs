@@ -19,4 +19,6 @@ public class UserStory
     public int BusinessValue { get; set; }
     //[Required]
     public decimal Estimation { get; set; }
+    //[Required]
+    public Status Status { get; set; } =  Status.Planning;
 }

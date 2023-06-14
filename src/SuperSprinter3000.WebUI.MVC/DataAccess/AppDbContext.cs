@@ -39,6 +39,9 @@ public class AppDbContext : DbContext
 
             entity.Property(e => e.Estimation)
                 .IsRequired();
+            entity.Property(e => e.Status)
+                .IsRequired()
+                .HasConversion<string>();
         });
 
         // add some (test) data
@@ -48,12 +51,14 @@ public class AppDbContext : DbContext
             new UserStory
             {
                 Id = 1, Title = "User Story 1", Description = "Description 1",
-                AcceptanceCriteria = "Acceptance Criteria 1", BusinessValue = 100, Estimation = 0.5m
+                AcceptanceCriteria = "Acceptance Criteria 1", BusinessValue = 100, Estimation = 0.5m,
+                Status = Status.InProgress
             },
             new UserStory
             {
                 Id = 2, Title = "User Story 2", Description = "Description 2",
-                AcceptanceCriteria = "Acceptance Criteria 2", BusinessValue = 200, Estimation = 1m
+                AcceptanceCriteria = "Acceptance Criteria 2", BusinessValue = 200, Estimation = 1m,
+                Status = Status.Todo
             }
         });
 

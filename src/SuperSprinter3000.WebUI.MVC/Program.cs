@@ -33,6 +33,8 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UserStories}/{action=Index}/{id?}");
 
+app.UseRequestLocalization("en-EN", "pl-PL");
+
 // recreate the database on each run
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();

@@ -20,20 +20,21 @@ public class UserStoriesService : IUserStoriesService
         Description = us.Description,
         AcceptanceCriteria = us.AcceptanceCriteria,
         BusinessValue = us.BusinessValue,
-        Estimation = us.Estimation
+        Estimation = us.Estimation,
+        Status = us.Status
     });
 
-    public UserStoryViewModel? GetById(int id) => _userStoriesRepository.GetById(id) switch
+    public EditUserStoryViewModel? GetByIdForEdit(int id) => _userStoriesRepository.GetById(id) switch
     {
         null => null,
-        var userStory => new UserStoryViewModel
+        var userStory => new EditUserStoryViewModel
         {
-            Id = userStory.Id,
             Title = userStory.Title,
             Description = userStory.Description,
             AcceptanceCriteria = userStory.AcceptanceCriteria,
             BusinessValue = userStory.BusinessValue,
-            Estimation = userStory.Estimation
+            Estimation = userStory.Estimation,
+            Status = userStory.Status
         }
     };
 
@@ -45,25 +46,24 @@ public class UserStoriesService : IUserStoriesService
             Description = userStory.Description,
             AcceptanceCriteria = userStory.AcceptanceCriteria,
             BusinessValue = userStory.BusinessValue,
-            Estimation = userStory.Estimation
+            Estimation = userStory.Estimation,
+            Status = Status.Planning
         });
     }
 
     public void Update(int id, EditUserStoryViewModel userStory)
     {
-        var userStoryToUpdate = _userStoriesRepository.GetById(id);
-
-        if (userStoryToUpdate is null)
+        _userStoriesRepository.Update(new UserStory
         {
-            return;
-        }
-
-        userStoryToUpdate.Title = userStory.Title;
-        userStoryToUpdate.Description = userStory.Description;
-        userStoryToUpdate.AcceptanceCriteria = userStory.AcceptanceCriteria;
-        userStoryToUpdate.BusinessValue = userStory.BusinessValue;
-        userStoryToUpdate.Estimation = userStory.Estimation;
-
-        _userStoriesRepository.Update(userStoryToUpdate);
+            Id = id,
+            Title = userStory.Title,
+            Description = userStory.Description,
+            AcceptanceCriteria = userStory.AcceptanceCriteria,
+            BusinessValue = userStory.BusinessValue,
+            Estimation = userStory.Estimation,
+            Status = userStory.Status
+        });
     }
+
+    public bool ExistsById(int id) => _userStoriesRepository.ExistsById(id);
 }

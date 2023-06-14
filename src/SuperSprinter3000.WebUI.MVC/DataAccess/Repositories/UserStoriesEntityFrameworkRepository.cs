@@ -1,4 +1,5 @@
-﻿using SuperSprinter3000.WebUI.MVC.DataAccess.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using SuperSprinter3000.WebUI.MVC.DataAccess.Entities;
 
 namespace SuperSprinter3000.WebUI.MVC.DataAccess.Repositories;
 
@@ -11,33 +12,35 @@ public class UserStoriesEntityFrameworkRepository : IUserStoriesRepository
         _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
     }
 
-    public IEnumerable<UserStory> GetAll() => _dbContext.UserStories.ToList();
+    public IEnumerable<UserStory> GetAll() => _dbContext.UserStories.AsNoTracking().ToList();
 
     public UserStory? GetById(int id) => _dbContext.UserStories.Find(id);
 
     public void Add(UserStory userStory)
     {
         _dbContext.UserStories.Add(userStory);
+
         _dbContext.SaveChanges();
     }
 
     public void Update(UserStory userStory)
     {
-        var userStoryToUpdate = _dbContext.UserStories.Find(userStory.Id);
+        var existingUserStory = _dbContext.UserStories.Find(userStory.Id);
 
-        if (userStoryToUpdate is null)
+        if (existingUserStory is null)
         {
             return;
         }
 
-        userStoryToUpdate.Title = userStory.Title;
-        userStoryToUpdate.Description = userStory.Description;
-        userStoryToUpdate.AcceptanceCriteria = userStory.AcceptanceCriteria;
-        userStoryToUpdate.BusinessValue = userStory.BusinessValue;
-        userStoryToUpdate.Estimation = userStory.Estimation;
+        existingUserStory.Title = userStory.Title;
+        existingUserStory.Description = userStory.Description;
+        existingUserStory.AcceptanceCriteria = userStory.AcceptanceCriteria;
+        existingUserStory.BusinessValue = userStory.BusinessValue;
+        existingUserStory.Estimation = userStory.Estimation;
+        existingUserStory.Status = userStory.Status;
 
         _dbContext.SaveChanges();
     }
 
-    public bool Exists(int id) => _dbContext.UserStories.Find(id) is not null;
+    public bool ExistsById(int id) => _dbContext.UserStories.Find(id) is not null;
 }

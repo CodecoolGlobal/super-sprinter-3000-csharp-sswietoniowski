@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SuperSprinter3000.WebUI.MVC.DataAccess.Entities;
 
 namespace SuperSprinter3000.WebUI.MVC.Models;
 
@@ -21,4 +22,7 @@ public class UserStoryViewModel
 
     [Display(Name = "Estimation")]
     public decimal Estimation { get; set; }
+
+    [Display(Name = "Status")]
+    public Status Status { get; set; } = Status.Planning;
 }

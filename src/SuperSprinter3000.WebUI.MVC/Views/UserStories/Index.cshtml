@@ -4,12 +4,14 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">User Stories</h1>
-    <div class="card">
-        <a asp-action="Add">Add User Story</a>
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="display-4">User Stories</h1>
+        <a asp-action="Add" class="btn btn-secondary">Add User Story</a>
     </div>
-    <div class="card">
+</div>
+<div class="row">
+    <div class="col-md-12">
         <table class="table">
             <thead>
             <tr>
@@ -20,10 +22,11 @@
                 <th>Business Value</th>
                 <th>Estimation</th>
                 <th>Status</th>
+                <th>Action(-s)</th>
             </tr>
             </thead>
             <tbody>
-            @foreach(var userStory in Model)
+            @foreach (var userStory in Model)
             {
                 <tr>
                     <td>@userStory.Id</td>
@@ -32,7 +35,8 @@
                     <td>@userStory.AcceptanceCriteria</td>
                     <td>@userStory.BusinessValue</td>
                     <td>@userStory.Estimation</td>
-                    <td><a asp-action="Edit" asp-route-id="@userStory.Id">Edit User Story</a></td>
+                    <td>@userStory.Status</td>
+                    <td><a asp-action="Edit" asp-route-id="@userStory.Id" class="btn btn-secondary">Edit User Story</a></td>
                 </tr>
             }
             </tbody>
