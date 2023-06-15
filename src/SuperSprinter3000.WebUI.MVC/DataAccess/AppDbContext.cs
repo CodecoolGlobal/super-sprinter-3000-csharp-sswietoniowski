@@ -48,6 +48,7 @@ public class AppDbContext : DbContext
 
         modelBuilder.Entity<UserStory>().HasData(new List<UserStory>
         {
+            // User stories are typically structured in the following format: "As a [type of user], I want [some goal] so that [some reason/benefit]."
             new UserStory
             {
                 Id = 1,
