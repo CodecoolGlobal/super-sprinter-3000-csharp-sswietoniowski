@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Mvc;
-using SuperSprinter3000.WebUI.RazorPages.Attributes;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess.Entities;
+using SuperSprinter3000.Domain.Entities;
 
-namespace SuperSprinter3000.WebUI.RazorPages.Models;
+namespace SuperSprinter3000.Application.Models;
 
 public class EditUserStoryViewModel
 {
@@ -25,14 +23,11 @@ public class EditUserStoryViewModel
     [Display(Name = "Business Value")]
     [Required]
     [Range(100, 1500)]
-    [DivisibleBy(100)]
     public int BusinessValue { get; set; }
 
     [Display(Name = "Estimation")]
     [Required]
     [Range(0.5, 40)]
-    [DivisibleBy(0.5)]
-    [ModelBinder(BinderType = typeof(DecimalModelBinder))]
     public decimal Estimation { get; set; }
 
     [Display(Name = "Status")]

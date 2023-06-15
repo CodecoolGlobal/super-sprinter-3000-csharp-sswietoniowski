@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess.Entities;
+using SuperSprinter3000.Domain.Entities;
 
-namespace SuperSprinter3000.WebUI.RazorPages.DataAccess;
+namespace SuperSprinter3000.Infrastructure.Persistence.EntityFramework.DataAccess;
 
 public class AppDbContext : DbContext
 {

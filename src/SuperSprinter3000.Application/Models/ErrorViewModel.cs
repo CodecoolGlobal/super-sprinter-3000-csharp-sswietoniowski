@@ -1,4 +1,4 @@
-namespace SuperSprinter3000.WebUI.RazorPages.Models;
+namespace SuperSprinter3000.Application.Models;
 
 public class ErrorViewModel
 {

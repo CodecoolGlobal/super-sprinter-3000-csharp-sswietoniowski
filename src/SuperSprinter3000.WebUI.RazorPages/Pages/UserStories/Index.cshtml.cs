@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SuperSprinter3000.WebUI.RazorPages.Models;
-using SuperSprinter3000.WebUI.RazorPages.Services;
+using SuperSprinter3000.Application.Models;
+using SuperSprinter3000.Application.Services;
 
 namespace SuperSprinter3000.WebUI.RazorPages.Pages.UserStories;
 

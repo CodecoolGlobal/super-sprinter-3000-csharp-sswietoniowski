@@ -1,6 +1,6 @@
-﻿using SuperSprinter3000.WebUI.RazorPages.Models;
+﻿using SuperSprinter3000.Application.Models;
 
-namespace SuperSprinter3000.WebUI.RazorPages.Services;
+namespace SuperSprinter3000.Application.Services;
 
 public interface IUserStoriesService
 {

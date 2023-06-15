@@ -1,8 +1,8 @@
-﻿using SuperSprinter3000.WebUI.RazorPages.DataAccess.Entities;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess.Repositories;
-using SuperSprinter3000.WebUI.RazorPages.Models;
+﻿using SuperSprinter3000.Application.Models;
+using SuperSprinter3000.Application.Repositories;
+using SuperSprinter3000.Domain.Entities;
 
-namespace SuperSprinter3000.WebUI.RazorPages.Services;
+namespace SuperSprinter3000.Application.Services;
 
 public class UserStoriesService : IUserStoriesService
 {

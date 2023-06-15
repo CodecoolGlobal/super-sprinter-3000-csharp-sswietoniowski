@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SuperSprinter3000.WebUI.RazorPages.DataAccess.Entities;
+namespace SuperSprinter3000.Domain.Entities;
 
 public enum Status
 {

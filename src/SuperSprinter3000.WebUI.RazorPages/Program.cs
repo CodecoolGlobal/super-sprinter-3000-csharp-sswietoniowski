@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess.Repositories;
-using SuperSprinter3000.WebUI.RazorPages.Services;
+using SuperSprinter3000.Application.Repositories;
+using SuperSprinter3000.Application.Services;
+using SuperSprinter3000.Infrastructure.Persistence.EntityFramework.DataAccess;
+using SuperSprinter3000.Infrastructure.Persistence.EntityFramework.DataAccess.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

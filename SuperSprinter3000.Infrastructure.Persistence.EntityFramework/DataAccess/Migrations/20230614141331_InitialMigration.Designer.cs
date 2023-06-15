@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SuperSprinter3000.WebUI.RazorPages.DataAccess;
+using SuperSprinter3000.Infrastructure.Persistence.EntityFramework.DataAccess;
 
 #nullable disable
 

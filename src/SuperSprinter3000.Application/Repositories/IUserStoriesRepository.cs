@@ -1,6 +1,6 @@
-﻿using SuperSprinter3000.WebUI.RazorPages.DataAccess.Entities;
+﻿using SuperSprinter3000.Domain.Entities;
 
-namespace SuperSprinter3000.WebUI.RazorPages.DataAccess.Repositories;
+namespace SuperSprinter3000.Application.Repositories;
 
 public interface IUserStoriesRepository
 {
