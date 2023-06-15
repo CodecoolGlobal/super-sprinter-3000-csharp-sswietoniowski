@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperSprinter3000.WebUI.MVC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D1192D5-658B-42D3-82DD-04398904312C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSprinter3000.WebUI.RazorPages", "src\SuperSprinter3000.WebUI.RazorPages\SuperSprinter3000.WebUI.RazorPages.csproj", "{9DA23323-CFB3-4A09-916F-CF5EB9846A05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{0E293FAE-320F-4AEF-8C03-597C5E62C2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E293FAE-320F-4AEF-8C03-597C5E62C2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E293FAE-320F-4AEF-8C03-597C5E62C2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA23323-CFB3-4A09-916F-CF5EB9846A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA23323-CFB3-4A09-916F-CF5EB9846A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA23323-CFB3-4A09-916F-CF5EB9846A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA23323-CFB3-4A09-916F-CF5EB9846A05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0E293FAE-320F-4AEF-8C03-597C5E62C2D3} = {5D1192D5-658B-42D3-82DD-04398904312C}
+		{9DA23323-CFB3-4A09-916F-CF5EB9846A05} = {5D1192D5-658B-42D3-82DD-04398904312C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29E8D6F0-3DF3-4228-9CA1-479890727A65}
