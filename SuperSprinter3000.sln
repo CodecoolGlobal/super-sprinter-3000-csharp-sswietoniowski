@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSprinter3000.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSprinter3000.Application", "src\SuperSprinter3000.Application\SuperSprinter3000.Application.csproj", "{D6781B8F-6BE1-4C85-90BB-D6F8458E7735}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSprinter3000.Infrastructure.Persistence.EntityFramework", "SuperSprinter3000.Infrastructure.Persistence.EntityFramework\SuperSprinter3000.Infrastructure.Persistence.EntityFramework.csproj", "{05E74846-4757-4928-A8E7-1AF1FF7150F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperSprinter3000.Infrastructure.Persistence.EntityFramework", "src\SuperSprinter3000.Infrastructure.Persistence.EntityFramework\SuperSprinter3000.Infrastructure.Persistence.EntityFramework.csproj", "{05E74846-4757-4928-A8E7-1AF1FF7150F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
